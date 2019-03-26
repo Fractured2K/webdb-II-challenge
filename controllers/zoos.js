@@ -1,4 +1,11 @@
 const router = require("express").Router();
-const knex = require("knex");
+
+const db = require("knex")({
+	client: "sqlite3",
+	useNullAsDefault: true,
+	connection: {
+		filename: "data/roles.db"
+	}
+});
 
 module.exports = router;
