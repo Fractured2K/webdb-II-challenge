@@ -9,7 +9,23 @@ const db = require("knex")({
 });
 
 // Create zoo
-router.post("/", async (req, res) => {});
+router.post("/", async (req, res) => {
+	try {
+		// Create zoo
+		const zoo = await db("zoos").insert(req.body);
+
+		// Return newly created zoo
+		const newZoo = await db("zoos")
+			.where({ id: zoo[0] })
+			.first();
+
+		res.status(201).json(newZoo);
+	} catch (err) {
+		res.status(500).json({
+			message: "Sorry, there was a problem creating that zoo"
+		});
+	}
+});
 
 // Get zoos
 router.get("/", async (req, res) => {
