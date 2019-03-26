@@ -8,4 +8,7 @@ const db = require("knex")({
 	}
 });
 
+// Get zoo
+router.get("/", async (req, res) => {});
+
 module.exports = router;
