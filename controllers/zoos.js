@@ -8,6 +8,9 @@ const db = require("knex")({
 	}
 });
 
+// Create zoo
+router.post("/", async (req, res) => {});
+
 // Get zoos
 router.get("/", async (req, res) => {
 	try {
