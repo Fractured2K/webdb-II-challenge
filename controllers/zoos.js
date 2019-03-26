@@ -8,7 +8,7 @@ const db = require("knex")({
 	}
 });
 
-// Get zoo
+// Get zoos
 router.get("/", async (req, res) => {
 	try {
 		const zoos = await db("zoos");
@@ -21,5 +21,8 @@ router.get("/", async (req, res) => {
 		});
 	}
 });
+
+// Get zoo by id
+router.get("/:id", async (req, res) => {});
 
 module.exports = router;
