@@ -58,4 +58,7 @@ router.get("/:id", async (req, res) => {
 	}
 });
 
+// Update zoo
+router.put("/:id", async (req, res) => {});
+
 module.exports = router;
